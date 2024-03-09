@@ -1,0 +1,21 @@
+@startuml circularBuffer
+
+class CircularBuffer {
+    - m_tail:int
+    - m_head:int
+    - m_currentsize:int
+    - m_array:std::array<t,totalsize>
+----
+    +push_back(T value):void
+    +pop():void
+    +head() const:T&
+    +head() :T&
+    +tail() const  :T&
+    +tail()  :T&
+    +size() const :T&
+    +size()  :T&
+    +empty() const  :T&
+    +empty()  :T&
+}
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+start
+if(  size ==0) then
+:throw pop failed due to size;
+endif
+:update head;
+    note
+    any checking
+    ----
+    - what happens if head exceed totalsize
+    - what happens if tail+1 == head && size==0 -> throw
+    end note
+if (head > totalsize) then
+:head=0;
+endif
+if( head == tail +1 && size ==0) then
+:throw pop failed due to size;
+endif
+
+:update size;
+    note
+    any checking
+    ----
+    - what happens if size less than zero
+    end note
+end
+
+@enduml

@@ -1,0 +1,40 @@
+@startuml circualr buffer
+note:push_back
+start
+
+    note
+    - any checking
+    ----
+    - what happens if  tail exceed total size
+    - what happens if  tail reach to head  and there is data exist-> need to update head
+    end note
+if (tail >= totalsize) then
+:tail=0;
+endif
+:update container[tail]=value;
+
+
+if (tail == head && size>0) then
+:update head;
+    note
+        any checking
+        ----
+        - what happens if head exceed total size->head=0
+    end note
+if(head > totalsize) then
+:head=0;
+endif
+endif
+:update tail;
+:update size;
+    note
+    - any checking
+    ----
+        -what happens if the size exceed total size
+    end note
+if(size > totalsize) then
+:size=totalsize;
+endif
+end
+
+@enduml
